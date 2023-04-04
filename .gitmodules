@@ -1,0 +1,3 @@
+[submodule "extensions"]
+	path = raycast_extensions
+	url = https://github.com/raycast/extensions.git
