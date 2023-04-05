@@ -29,8 +29,11 @@ jobs:
     name: "${{ github.event_name == 'push' && 'Publish' || (github.event_name == 'pull_request' && 'Check' || github.event_name == 'workflow_dispatch' && inputs.command || github.event_name ) }}"
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: raycast/github-actions/git-checkout@v1.13.0
+      - uses: actions/checkout@v3
+        with:
+          submodules: true
+      # - name: Checkout
+      #   uses: raycast/github-actions/git-checkout@v1.13.0
       # This makes sure that the problems found while validating the extensions are shown in the PR diff
       # - name: Register Problem Matcher for Ray CLI
       #   run: echo "##[add-matcher].github/ray.matcher.json"
