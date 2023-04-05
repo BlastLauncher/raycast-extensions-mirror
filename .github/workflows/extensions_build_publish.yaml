@@ -45,12 +45,12 @@ jobs:
           fi
       - name: Run Blast CLI
         id: blast_cli
-        uses: BlastLauncher/raycast-extensions-mirror/blast-cli@main
+        uses: BlastLauncher/actions/blast-cli@main
         with: 
           npm_token: "${{ secrets.NPM_TOKEN }}"
           command: "${{ github.event.inputs.command }}"
           paths: "${{ github.event.inputs.paths }}"
-          cli_version: "${{ github.event.inputs.cli_version }}"
+          # cli_version: "${{ github.event.inputs.cli_version }}"
           allow_owners_only_for_extensions: "${{ steps.allow_owners_only_for_extensions.outputs.value }}"
           
       # - name: Run Ray CLI
