@@ -32,17 +32,17 @@ jobs:
       - name: Checkout
         uses: raycast/github-actions/git-checkout@v1.13.0
       # This makes sure that the problems found while validating the extensions are shown in the PR diff
-      - name: Register Problem Matcher for Ray CLI
-        run: echo "##[add-matcher].github/ray.matcher.json"
-      - name: Generate 'allow_owners_only_for_extensions'
-        id: allow_owners_only_for_extensions
-        run: |
-          file_path="${{ github.workspace }}/.github/public_raycast_extensions.txt"
-          if [[ -f "$file_path" ]]; then
-            echo "value<<EOF" >> $GITHUB_OUTPUT
-            cat "$file_path"; echo >> $GITHUB_OUTPUT
-            echo 'EOF' >> $GITHUB_OUTPUT
-          fi
+      # - name: Register Problem Matcher for Ray CLI
+      #   run: echo "##[add-matcher].github/ray.matcher.json"
+      # - name: Generate 'allow_owners_only_for_extensions'
+      #   id: allow_owners_only_for_extensions
+      #   run: |
+      #     file_path="${{ github.workspace }}/.github/public_raycast_extensions.txt"
+      #     if [[ -f "$file_path" ]]; then
+      #       echo "value<<EOF" >> $GITHUB_OUTPUT
+      #       cat "$file_path"; echo >> $GITHUB_OUTPUT
+      #       echo 'EOF' >> $GITHUB_OUTPUT
+      #     fi
       - name: Run Blast CLI
         id: blast_cli
         uses: BlastLauncher/actions/blast-cli@main
