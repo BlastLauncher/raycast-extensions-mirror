@@ -6,14 +6,15 @@ on:
     inputs:
       paths:
         description: 'Extensions to update (comma-separated relative paths for extensions) or ("extensions/**"" to execute on all possible subdirectories)'
+        default: 'raycast_extensions/extensions/**'
         required: true
       command:
         description: "Ray CLI command to run (build | publish)"
         default: "build"
         required: true
-      cli_version:
-        description: 'CLI Version (optional, eg. "1.0.0")'
-        required: false
+      # cli_version:
+      #   description: 'CLI Version (optional, eg. "1.0.0")'
+      #   required: false
   pull_request:
     paths:
       - "extensions/**"
